@@ -1,0 +1,27 @@
+{
+  "name": "ny-dental-Qgis",
+  "version": "1.0.0",
+  "description": "### Tuto Qgis:",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igoralves1/ny-dental-Qgis.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/igoralves1/ny-dental-Qgis/issues"
+  },
+  "homepage": "https://github.com/igoralves1/ny-dental-Qgis#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "request": "^2.88.0"
+  }
+}
