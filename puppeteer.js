@@ -1,6 +1,9 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer')
+const fs = require('fs')
+const dt = Date.now()
+const writeStream = fs.createWriteStream(dt + '.csv')
 
-(async function main() {
+async function main() {
   try {
     const browser = await puppeteer.launch({ headless: true })
     const page = await browser.newPage()
@@ -28,11 +31,8 @@ const puppeteer = require('puppeteer');
 
     let strResult = 'Name,Conffirmed,Deaths,Cures\n'
 
-    let ctSectins = 0
-
     for (const section of sections) {
       const provinces = await section.$$('.fold___xVOZX')
-      let nbProv = provinces.length + 1
 
       const provincesExps = await section.$$('.expand___wz_07')
       for (const provincesExp of provincesExps) {
@@ -54,7 +54,6 @@ const puppeteer = require('puppeteer');
           strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + '\n'
         }
 
-        let ctexP = 1
         for (const citiesPxz of citiesEXP) {
           name = await citiesPxz.$eval('p.subBlock1___j0DGa', n => n.innerText)
           conffirmed = await citiesPxz.$eval('p.subBlock2___E7-fW', c => c.innerText)
@@ -68,7 +67,6 @@ const puppeteer = require('puppeteer');
         }
       }
 
-      let pr = 2
       for (const province of provinces) {
         const citiesPs = await province.$$('.areaBlock1___3V3UU')
         const cities = await province.$$('.areaBlock2___27vn7')
@@ -84,7 +82,6 @@ const puppeteer = require('puppeteer');
           strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + '\n'
         }
 
-        let ct=1
         for (const city of cities) {
           let element = await city.$('p.subBlock1___j0DGa')
 
@@ -92,7 +89,7 @@ const puppeteer = require('puppeteer');
             name = await city.$eval('p.subBlock1___j0DGa', n => n.innerText)
           }
 
-          let conffirmedSr=false
+          let conffirmedSr = false
           if (!(await city.$('p.subBlock2___E7-fW') === null)) {
             conffirmedSr = true
             conffirmed = await city.$eval('p.subBlock2___E7-fW', c => c.innerText)
@@ -115,11 +112,15 @@ const puppeteer = require('puppeteer');
             strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + '\n'
           }
         }
-        pr++
       }
     }
+    writeStream.write(strResult)
     console.log(strResult)
   } catch (e) {
     console.log('our error', e)
   }
+}
+
+(async function run () {
+  setTimeout(main, 3000)
 })()
