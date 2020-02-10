@@ -1,9 +1,12 @@
 const puppeteer = require('puppeteer')
 const fs = require('fs')
-const dt = Date.now()
-const writeStream = fs.createWriteStream(dt + '.csv')
+
+main();
 
 async function main() {
+  const dt = Date.now()
+  const writeStream = fs.createWriteStream(dt + '.csv')
+  
   try {
     const browser = await puppeteer.launch({ headless: true })
     const page = await browser.newPage()
@@ -114,13 +117,11 @@ async function main() {
         }
       }
     }
-    writeStream.write(strResult)
+    await writeStream.write(strResult)
     console.log(strResult)
   } catch (e) {
     console.log('our error', e)
   }
-}
 
-(async function run () {
-  setTimeout(main, 3000)
-})()
+  setTimeout(main, 1000 * 60 * 60 * 1);
+}
