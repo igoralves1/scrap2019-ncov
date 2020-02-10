@@ -123,16 +123,11 @@ const puppeteer = require('puppeteer');
             }
         ];
 
-
         let cities = []
 
-
-
-
-
-
-
-
+        let strResult = 'Name,Conffirmed,Deaths,Cures\n'
+        // let strResult = ''
+        let arrResult =[]
 
         let ctSectins = 0
         for (const section of sections){
@@ -146,8 +141,8 @@ const puppeteer = require('puppeteer');
 
             const provinces = await section.$$('.fold___xVOZX')
             let nbProv = provinces.length +1
-            console.log('provinces = ' + provinces.length)
-            console.log('Line | ' + 'Name |' + 'Conffirmed | ' + 'Deaths | ' + 'Cures |' + `\n`)
+            // console.log('provinces = ' + provinces.length)
+            // console.log('Line | ' + 'Name |' + 'Conffirmed | ' + 'Deaths | ' + 'Cures |' + `\n`)
 
 
 
@@ -155,8 +150,8 @@ const puppeteer = require('puppeteer');
             for(const provincesExp of provincesExps){
                 const citiesEXPEx = await provincesExp.$$('.areaBlock1___3V3UU')
                 const citiesEXP = await provincesExp.$$('.areaBlock2___27vn7')
-                console.log('province = ' + provincesExps.length)
-                console.log('cities = ' + citiesEXP.length)
+                // console.log('province = ' + provincesExps.length)
+                // console.log('cities = ' + citiesEXP.length)
 
                  
 
@@ -173,19 +168,21 @@ const puppeteer = require('puppeteer');
                     cures = await citiesPx.$eval('p.subBlock3___3mcDz', r=>r.innerText)
                     if (cures === '') { cures = '0' }
 
-                    dataRseult[0].province.name= name
-                    dataRseult[0].province.conffirmed= conffirmed
-                    dataRseult[0].province.deaths= deaths
-                    dataRseult[0].province.cures= cures
-                    console.log(JSON.stringify(dataRseult, null, 4))
+                    // dataRseult[0].province.name= name
+                    // dataRseult[0].province.conffirmed= conffirmed
+                    // dataRseult[0].province.deaths= deaths
+                    // dataRseult[0].province.cures= cures
+                    // console.log(JSON.stringify(dataRseult, null, 4))
 
-                    return false
+                    //return false
 
                     // dataRseult[1].push(province.name = name)
                     // dataRseult[1].province.conffirmed = conffirmed
                     // dataRseult[1].province.deaths = deaths
                     // dataRseult[1].province.cures = cures
-                    console.log(1 + '|' + name + '|' + conffirmed + '|' + deaths + '|' + cures + `\n`)
+                    strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + `\n`
+                    arrResult.push(name + ',' + conffirmed + ',' + deaths + ',' + cures + `\n`)
+                    // console.log(1 + '|' + name + '|' + conffirmed + '|' + deaths + '|' + cures + `\n`)
                 }
 
                 let ctexP = 1
@@ -202,18 +199,19 @@ const puppeteer = require('puppeteer');
                     cures = await citiesPxz.$eval('p.subBlock3___3mcDz', r=>r.innerText)
                     if (cures === '') { cures = '0' }
 
-                    dataRseult[1].cities[ctexP].name = name
-                    dataRseult[1].cities[ctexP].conffirmed = conffirmed
-                    dataRseult[1].cities[ctexP].deaths = deaths
-                    dataRseult[1].cities[ctexP].cures = cures
+                    // dataRseult[1].cities[ctexP].name = name
+                    // dataRseult[1].cities[ctexP].conffirmed = conffirmed
+                    // dataRseult[1].cities[ctexP].deaths = deaths
+                    // dataRseult[1].cities[ctexP].cures = cures
 
-                    console.log(ctexP++ + '|' + name + '|' + conffirmed + '|' + deaths + '|' + cures + `\n`)
+                    strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + `\n`
+                    // console.log(ctexP++ + '|' + name + '|' + conffirmed + '|' + deaths + '|' + cures + `\n`)
                 }
             }
             
-            console.log(dataRseult)
+            // console.log(dataRseult)
 
-            console.log('=======================================================')
+            // console.log('=======================================================')
 
             let pr = 2
             for(const province of provinces){
@@ -221,8 +219,8 @@ const puppeteer = require('puppeteer');
                 const citiesPs = await province.$$('.areaBlock1___3V3UU')
                 const cities = await province.$$('.areaBlock2___27vn7')
 
-                console.log('province = ' + pr)
-                console.log('cities = ' + cities.length)
+                // console.log('province = ' + pr)
+                // console.log('cities = ' + cities.length)
 
                 for (const citiesP of citiesPs){
                    
@@ -237,7 +235,8 @@ const puppeteer = require('puppeteer');
                     cures = await citiesP.$eval('p.subBlock3___3mcDz', r=>r.innerText)
                     if (cures === '') { cures = '0' }
 
-                    console.log(pr + '|' + name + '|' + conffirmed + '|' + deaths + '|' + cures + `\n`)
+                    strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + `\n`
+                    // console.log(pr + '|' + name + '|' + conffirmed + '|' + deaths + '|' + cures + `\n`)
                 }
 
                 let ct=1
@@ -277,14 +276,19 @@ const puppeteer = require('puppeteer');
                         if (cures === '') { cures = '0' }
                     }  
                     if(curesSt && deathsSt && conffirmedSr){
-                        console.log(ct++ + '|' + name + '|' + conffirmed + '|' + deaths + '|' + cures + `\n`)
+                        strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + `\n`
+                        // console.log(ct++ + '|' + name + '|' + conffirmed + '|' + deaths + '|' + cures + `\n`)
                     }
                 }
                 pr++
-                console.log('=======================================================')
+                // console.log('=======================================================')
+                // console.log(strResult)
+                
             }
         }
         // console.log(section.length);
+        //console.log(arrResult)
+        console.log(strResult)
 
     }catch(e){
         console.log('our error', e);
