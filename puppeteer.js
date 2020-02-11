@@ -6,7 +6,7 @@ main();
 async function main() {
   const dt = Date.now()
   const writeStream = fs.createWriteStream(dt + '.csv')
-  
+
   try {
     const browser = await puppeteer.launch({ headless: true })
     const page = await browser.newPage()
@@ -33,89 +33,139 @@ async function main() {
     let cures = ''
 
     let strResult = 'Name,Conffirmed,Deaths,Cures\n'
+    let nb=1
 
     for (const section of sections) {
-      const provinces = await section.$$('.fold___xVOZX')
+      
+      if(nb === 1) {        
 
-      const provincesExps = await section.$$('.expand___wz_07')
-      for (const provincesExp of provincesExps) {
-        const citiesEXPEx = await provincesExp.$$('.areaBlock1___3V3UU')
-        const citiesEXP = await provincesExp.$$('.areaBlock2___27vn7')
+        const provincesExps = await section.$$('.expand___wz_07')
 
-        for (const citiesPx of citiesEXPEx) {
-          name = await citiesPx.$eval('p.subBlock1___j0DGa', n => n.innerText)
+        for (const provincesExp of provincesExps) {
+            const citiesEXPEx = await provincesExp.$$('.areaBlock1___3V3UU')
+            const citiesEXP = await provincesExp.$$('.areaBlock2___27vn7')
 
-          conffirmed = await citiesPx.$eval('p.subBlock2___E7-fW', c => c.innerText)
-          if (conffirmed === '') { conffirmed = '0' }
+            for (const citiesPx of citiesEXPEx) {
+            name = await citiesPx.$eval('p.subBlock1___j0DGa', n => n.innerText)
 
-          deaths = await citiesPx.$eval('p.subBlock4___ANk6l', d => d.innerText) 
-          if (deaths === '') { deaths = '0' }
-
-          cures = await citiesPx.$eval('p.subBlock3___3mcDz', r => r.innerText)
-          if (cures === '') { cures = '0' }
-
-          strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + '\n'
-        }
-
-        for (const citiesPxz of citiesEXP) {
-          name = await citiesPxz.$eval('p.subBlock1___j0DGa', n => n.innerText)
-          conffirmed = await citiesPxz.$eval('p.subBlock2___E7-fW', c => c.innerText)
-          if (conffirmed === '') { conffirmed = '0' }
-
-          deaths = await citiesPxz.$eval('p.subBlock4___ANk6l', d => d.innerText)
-          if (deaths === '') { deaths = '0' }
-          cures = await citiesPxz.$eval('p.subBlock3___3mcDz', r => r.innerText)
-          if (cures === '') { cures = '0' }
-          strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + '\n'
-        }
-      }
-
-      for (const province of provinces) {
-        const citiesPs = await province.$$('.areaBlock1___3V3UU')
-        const cities = await province.$$('.areaBlock2___27vn7')
-
-        for (const citiesP of citiesPs) {
-          name = await citiesP.$eval('p.subBlock1___j0DGa', n => n.innerText)
-          conffirmed = await citiesP.$eval('p.subBlock2___E7-fW', c => c.innerText)
-          if (conffirmed === '') { conffirmed = '0' }
-          deaths = await citiesP.$eval('p.subBlock4___ANk6l', d => d.innerText)
-          if (deaths === '') { deaths = '0' }
-          cures = await citiesP.$eval('p.subBlock3___3mcDz', r => r.innerText)
-          if (cures === '') { cures = '0' }
-          strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + '\n'
-        }
-
-        for (const city of cities) {
-          let element = await city.$('p.subBlock1___j0DGa')
-
-          if (!(await city.$('p.subBlock1___j0DGa') === null)) {
-            name = await city.$eval('p.subBlock1___j0DGa', n => n.innerText)
-          }
-
-          let conffirmedSr = false
-          if (!(await city.$('p.subBlock2___E7-fW') === null)) {
-            conffirmedSr = true
-            conffirmed = await city.$eval('p.subBlock2___E7-fW', c => c.innerText)
+            conffirmed = await citiesPx.$eval('p.subBlock2___E7-fW', c => c.innerText)
             if (conffirmed === '') { conffirmed = '0' }
-          }
-          let deathsSt = false
-          if (!(await city.$('p.subBlock4___ANk6l') === null)) {
-            deathsSt = true
-            deaths = await city.$eval('p.subBlock2___E7-fW', d => d.innerText)
-            if (deaths === '') { deaths = '0' }
-          }
 
-          let curesSt = false
-          if (!(await city.$('p.subBlock3___3mcDz') === null)) {
-            curesSt = true
-            cures = await city.$eval('p.subBlock2___E7-fW', r => r.innerText)
+            deaths = await citiesPx.$eval('p.subBlock4___ANk6l', d => d.innerText) 
+            if (deaths === '') { deaths = '0' }
+
+            cures = await citiesPx.$eval('p.subBlock3___3mcDz', r => r.innerText)
             if (cures === '') { cures = '0' }
-          }
-          if (curesSt && deathsSt && conffirmedSr) {
+
             strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + '\n'
-          }
+            }
+
+            for (const citiesPxz of citiesEXP) {
+            name = await citiesPxz.$eval('p.subBlock1___j0DGa', n => n.innerText)
+            conffirmed = await citiesPxz.$eval('p.subBlock2___E7-fW', c => c.innerText)
+            if (conffirmed === '') { conffirmed = '0' }
+
+            deaths = await citiesPxz.$eval('p.subBlock4___ANk6l', d => d.innerText)
+            if (deaths === '') { deaths = '0' }
+            cures = await citiesPxz.$eval('p.subBlock3___3mcDz', r => r.innerText)
+            if (cures === '') { cures = '0' }
+            strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + '\n'
+            }
+        }
+
+        const provinces = await section.$$('.fold___xVOZX')
+        for (const province of provinces) {
+            const citiesPs = await province.$$('.areaBlock1___3V3UU')
+            const cities = await province.$$('.areaBlock2___27vn7')
+
+            for (const citiesP of citiesPs) {
+            name = await citiesP.$eval('p.subBlock1___j0DGa', n => n.innerText)
+            conffirmed = await citiesP.$eval('p.subBlock2___E7-fW', c => c.innerText)
+            if (conffirmed === '') { conffirmed = '0' }
+            deaths = await citiesP.$eval('p.subBlock4___ANk6l', d => d.innerText)
+            if (deaths === '') { deaths = '0' }
+            cures = await citiesP.$eval('p.subBlock3___3mcDz', r => r.innerText)
+            if (cures === '') { cures = '0' }
+            strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + '\n'
+            }
+
+            for (const city of cities) {
+                let element = await city.$('p.subBlock1___j0DGa')
+
+                if (!(await city.$('p.subBlock1___j0DGa') === null)) {
+                    name = await city.$eval('p.subBlock1___j0DGa', n => n.innerText)
+                }
+
+                let conffirmedSr = false
+                if (!(await city.$('p.subBlock2___E7-fW') === null)) {
+                    conffirmedSr = true
+                    conffirmed = await city.$eval('p.subBlock2___E7-fW', c => c.innerText)
+                    if (conffirmed === '') { conffirmed = '0' }
+                }
+                let deathsSt = false
+                if (!(await city.$('p.subBlock4___ANk6l') === null)) {
+                    deathsSt = true
+                    deaths = await city.$eval('p.subBlock2___E7-fW', d => d.innerText)
+                    if (deaths === '') { deaths = '0' }
+                }
+
+                let curesSt = false
+                if (!(await city.$('p.subBlock3___3mcDz') === null)) {
+                    curesSt = true
+                    cures = await city.$eval('p.subBlock2___E7-fW', r => r.innerText)
+                    if (cures === '') { cures = '0' }
+                }
+                if (curesSt && deathsSt && conffirmedSr) {
+                    strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + '\n'
+                }
+            }
+        }
+
+      }
+      if (nb === 2) {
+        const divs = await section.$$('div')
+        let nbDiv = 1
+        for (const div of divs) {
+            if (nbDiv === 2) {
+                name = await div.$eval('p.subBlock1___j0DGa', n => n.innerText)
+                conffirmed = await div.$eval('p.subBlock2___E7-fW', c => c.innerText)
+                if (conffirmed === '') { conffirmed = '0' }
+                deaths = await div.$eval('p.subBlock4___ANk6l', d => d.innerText)
+                if (deaths === '') { deaths = '0' }
+                cures = await div.$eval('p.subBlock3___3mcDz', r => r.innerText)
+                if (cures === '') { cures = '0' }
+                strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + '\n'
+            }
+            if (nbDiv > 2) {
+                const ab1s = await div.$$('.areaBlock1___3V3UU')
+                const ab2s = await div.$$('.areaBlock2___27vn7')
+
+                for (const ab1 of ab1s) {
+                    name = await ab1.$eval('p.subBlock1___j0DGa', n => n.innerText)
+                    conffirmed = await ab1.$eval('p.subBlock2___E7-fW', c => c.innerText)
+                    if (conffirmed === '') { conffirmed = '0' }
+                    deaths = await ab1.$eval('p.subBlock4___ANk6l', d => d.innerText)
+                    if (deaths === '') { deaths = '0' }
+                    cures = await ab1.$eval('p.subBlock3___3mcDz', r => r.innerText)
+                    if (cures === '') { cures = '0' }
+                    strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + '\n'
+                }
+
+                for (const ab2 of ab2s) {
+                    name = await ab2.$eval('p.subBlock1___j0DGa', n => n.innerText)
+                    conffirmed = await ab2.$eval('p.subBlock2___E7-fW', c => c.innerText)
+                    if (conffirmed === '') { conffirmed = '0' }
+                    deaths = await ab2.$eval('p.subBlock4___ANk6l', d => d.innerText)
+                    if (deaths === '') { deaths = '0' }
+                    cures = await ab2.$eval('p.subBlock3___3mcDz', r => r.innerText)
+                    if (cures === '') { cures = '0' }
+                    strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + '\n'
+                }
+            }
+            nbDiv++
         }
       }
+    nb++
     }
     await writeStream.write(strResult)
     console.log(strResult)
@@ -123,5 +173,5 @@ async function main() {
     console.log('our error', e)
   }
 
-  setTimeout(main, 1000 * 60 * 60 * 1);
+  setTimeout(main, 1000 * 60 * 30)
 }
