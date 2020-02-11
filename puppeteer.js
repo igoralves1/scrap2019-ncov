@@ -168,7 +168,7 @@ async function main() {
     nb++
     }
     await writeStream.write(strResult)
-    console.log(strResult)
+    // console.log(strResult)
   } catch (e) {
     console.log('our error', e)
   }
