@@ -60,25 +60,34 @@ async function main() {
             conffirmed = await citiesPx.$eval('p.subBlock2___E7-fW', c => c.innerText)
             if (conffirmed === '') { conffirmed = '0' }
 
+            cumulative = await citiesPx.$eval('p.subBlock5___2EkOU', y => y.innerText)
+            if (cumulative === '') { cumulative = '0' }
+
             deaths = await citiesPx.$eval('p.subBlock4___ANk6l', d => d.innerText) 
             if (deaths === '') { deaths = '0' }
 
             cures = await citiesPx.$eval('p.subBlock3___3mcDz', r => r.innerText)
             if (cures === '') { cures = '0' }
 
-            strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + '\n'
+            strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + ',' + dtms + '\n'
             }
 
             for (const citiesPxz of citiesEXP) {
             name = await citiesPxz.$eval('p.subBlock1___j0DGa', n => n.innerText)
+
             conffirmed = await citiesPxz.$eval('p.subBlock2___E7-fW', c => c.innerText)
             if (conffirmed === '') { conffirmed = '0' }
 
+            cumulative = await citiesPxz.$eval('p.subBlock5___2EkOU', y => y.innerText)
+            if (cumulative === '') { cumulative = '0' }
+
             deaths = await citiesPxz.$eval('p.subBlock4___ANk6l', d => d.innerText)
             if (deaths === '') { deaths = '0' }
+
             cures = await citiesPxz.$eval('p.subBlock3___3mcDz', r => r.innerText)
             if (cures === '') { cures = '0' }
-            strResult = strResult + name + ',' + conffirmed + ',' + deaths + ',' + cures + '\n'
+
+            strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + ',' + dtms + '\n'
             }
         }
 
@@ -102,7 +111,7 @@ async function main() {
             cures = await citiesP.$eval('p.subBlock3___3mcDz', r => r.innerText)
             if (cures === '') { cures = '0' }
 
-            strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + dtms + '\n'
+            strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + ',' + dtms + '\n'
             }
 
             for (const city of cities) {
@@ -140,7 +149,7 @@ async function main() {
                     if (cures === '') { cures = '0' }
                 }
                 if (curesSt && cumulativeSr && deathsSt && conffirmedSr) {
-                    strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + dtms + '\n'
+                    strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + ',' + dtms + '\n'
                 }
             }
         }
@@ -165,7 +174,7 @@ async function main() {
                 cures = await div.$eval('p.subBlock3___3mcDz', r => r.innerText)
                 if (cures === '') { cures = '0' }
 
-                strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + dtms + '\n'
+                strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + ',' + dtms + '\n'
             }
             if (nbDiv > 2) {
                 const ab1s = await div.$$('.areaBlock1___3V3UU')
@@ -186,7 +195,7 @@ async function main() {
                     cures = await ab1.$eval('p.subBlock3___3mcDz', r => r.innerText)
                     if (cures === '') { cures = '0' }
 
-                    strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + dtms + '\n'
+                    strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + ',' + dtms + '\n'
                 }
 
                 for (const ab2 of ab2s) {
@@ -204,7 +213,7 @@ async function main() {
                     cures = await ab2.$eval('p.subBlock3___3mcDz', r => r.innerText)
                     if (cures === '') { cures = '0' }
 
-                    strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + dtms + '\n'
+                    strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + ',' + dtms + '\n'
                 }
             }
             nbDiv++
