@@ -31,17 +31,22 @@ async function main() {
     // p.subBlock4___ANk6l (deaths)
     // p.subBlock3___3mcDz (cure)
     //
-    // p.subBlock2___E7-fW (Existing confirmed diagnosis)
-    // p.subBlock5___2EkOU title___2d1_B (Cumulative diagnosis)
-    // p.subBlock4___ANk6l title___2d1_B (deaths)
-    // p.subBlock3___3mcDz title___2d1_B (cure)
+    // p.subBlock2___E7-fW (Existing confirmed diagnosis) NOTE:ONLY ALIAS COLUMN TABLE 
+    // p.subBlock5___2EkOU title___2d1_B (Cumulative diagnosis) NOTE:ONLY ALIAS COLUMN TABLE
+    // p.subBlock4___ANk6l title___2d1_B (deaths) NOTE:ONLY ALIAS COLUMN TABLE
+    // p.subBlock3___3mcDz title___2d1_B (cure) NOTE:ONLY ALIAS COLUMN TABLE
 
     let name = ''
     let conffirmed = ''
     let cumulative = ''
-    let deaths = ''
-    
+    let deaths = ''    
     let cures = ''
+
+    let nameCls = 'p.subBlock1___j0DGa'
+    let conffirmedCls = 'p.subBlock2___E7-fW'
+    let cumulativeCls = 'p.subBlock4___ANk6l'
+    let deathsCls = 'p.subBlock3___3mcDz'
+    let curesCls = 'p.subBlock5___2EkOU'
 
     let strResult = 'Name,Dt,ExistingConfirmedDiagnosis,CumulativeDiagnosis,Deaths,Cures,DateMS\n'
     let nb = 1
@@ -55,36 +60,36 @@ async function main() {
             const citiesEXP = await provincesExp.$$('.areaBlock2___27vn7')
 
             for (const citiesPx of citiesEXPEx) {
-            name = await citiesPx.$eval('p.subBlock1___j0DGa', n => n.innerText)
+            name = await citiesPx.$eval(nameCls, n => n.innerText)
 
-            conffirmed = await citiesPx.$eval('p.subBlock2___E7-fW', c => c.innerText)
+            conffirmed = await citiesPx.$eval(conffirmedCls, c => c.innerText)
             if (conffirmed === '') { conffirmed = '0' }
 
-            cumulative = await citiesPx.$eval('p.subBlock5___2EkOU', y => y.innerText)
+            cumulative = await citiesPx.$eval(cumulativeCls, y => y.innerText)
             if (cumulative === '') { cumulative = '0' }
 
-            deaths = await citiesPx.$eval('p.subBlock4___ANk6l', d => d.innerText) 
+            deaths = await citiesPx.$eval(deathsCls, d => d.innerText)
             if (deaths === '') { deaths = '0' }
 
-            cures = await citiesPx.$eval('p.subBlock3___3mcDz', r => r.innerText)
+            cures = await citiesPx.$eval(curesCls, r => r.innerText)
             if (cures === '') { cures = '0' }
 
             strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + ',' + dtms + '\n'
             }
 
             for (const citiesPxz of citiesEXP) {
-            name = await citiesPxz.$eval('p.subBlock1___j0DGa', n => n.innerText)
+            name = await citiesPxz.$eval(nameCls, n => n.innerText)
 
-            conffirmed = await citiesPxz.$eval('p.subBlock2___E7-fW', c => c.innerText)
+            conffirmed = await citiesPxz.$eval(conffirmedCls, c => c.innerText)
             if (conffirmed === '') { conffirmed = '0' }
 
-            cumulative = await citiesPxz.$eval('p.subBlock5___2EkOU', y => y.innerText)
+            cumulative = await citiesPxz.$eval(cumulativeCls, y => y.innerText)
             if (cumulative === '') { cumulative = '0' }
 
-            deaths = await citiesPxz.$eval('p.subBlock4___ANk6l', d => d.innerText)
+            deaths = await citiesPxz.$eval(deathsCls, d => d.innerText)
             if (deaths === '') { deaths = '0' }
 
-            cures = await citiesPxz.$eval('p.subBlock3___3mcDz', r => r.innerText)
+            cures = await citiesPxz.$eval(curesCls, r => r.innerText)
             if (cures === '') { cures = '0' }
 
             strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + ',' + dtms + '\n'
@@ -97,55 +102,55 @@ async function main() {
             const cities = await province.$$('.areaBlock2___27vn7')
 
             for (const citiesP of citiesPs) {
-            name = await citiesP.$eval('p.subBlock1___j0DGa', n => n.innerText)
+            name = await citiesP.$eval(nameCls, n => n.innerText)
 
-            conffirmed = await citiesP.$eval('p.subBlock2___E7-fW', c => c.innerText)
+            conffirmed = await citiesP.$eval(conffirmedCls, c => c.innerText)
             if (conffirmed === '') { conffirmed = '0' }
 
-            cumulative = await citiesP.$eval('p.subBlock5___2EkOU', y => y.innerText)
+            cumulative = await citiesP.$eval(cumulativeCls, y => y.innerText)
             if (cumulative === '') { cumulative = '0' }
             
-            deaths = await citiesP.$eval('p.subBlock4___ANk6l', d => d.innerText)
+            deaths = await citiesP.$eval(deathsCls, d => d.innerText)
             if (deaths === '') { deaths = '0' }
 
-            cures = await citiesP.$eval('p.subBlock3___3mcDz', r => r.innerText)
+            cures = await citiesP.$eval(curesCls, r => r.innerText)
             if (cures === '') { cures = '0' }
 
             strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + ',' + dtms + '\n'
             }
 
             for (const city of cities) {
-                let element = await city.$('p.subBlock1___j0DGa')
+                let element = await city.$(nameCls)
 
-                if (!(await city.$('p.subBlock1___j0DGa') === null)) {
-                    name = await city.$eval('p.subBlock1___j0DGa', n => n.innerText)
+                if (!(await city.$(nameCls) === null)) {
+                    name = await city.$eval(nameCls, n => n.innerText)
                 }
 
                 let conffirmedSr = false
-                if (!(await city.$('p.subBlock2___E7-fW') === null)) {
+                if (!(await city.$(conffirmedCls) === null)) {
                     conffirmedSr = true
-                    conffirmed = await city.$eval('p.subBlock2___E7-fW', c => c.innerText)
+                    conffirmed = await city.$eval(conffirmedCls, c => c.innerText)
                     if (conffirmed === '') { conffirmed = '0' }
                 }
 
                 let cumulativeSr = false
-                if (!(await city.$('p.subBlock5___2EkOU') === null)) {
+                if (!(await city.$(cumulativeCls) === null)) {
                     cumulativeSr = true
-                    cumulative = await city.$eval('p.subBlock5___2EkOU', y => y.innerText)
+                    cumulative = await city.$eval(cumulativeCls, y => y.innerText)
                     if (cumulative === '') { cumulative = '0' }
                 }
             
                 let deathsSt = false
-                if (!(await city.$('p.subBlock4___ANk6l') === null)) {
+                if (!(await city.$(deathsCls) === null)) {
                     deathsSt = true
-                    deaths = await city.$eval('p.subBlock4___ANk6l', d => d.innerText)
+                    deaths = await city.$eval(deathsCls, d => d.innerText)
                     if (deaths === '') { deaths = '0' }
                 }
 
                 let curesSt = false
-                if (!(await city.$('p.subBlock3___3mcDz') === null)) {
+                if (!(await city.$(curesCls) === null)) {
                     curesSt = true
-                    cures = await city.$eval('p.subBlock3___3mcDz', r => r.innerText)
+                    cures = await city.$eval(curesCls, r => r.innerText)
                     if (cures === '') { cures = '0' }
                 }
                 if (curesSt && cumulativeSr && deathsSt && conffirmedSr) {
@@ -160,18 +165,18 @@ async function main() {
         let nbDiv = 1
         for (const div of divs) {
             if (nbDiv === 2) {
-                name = await div.$eval('p.subBlock1___j0DGa', n => n.innerText)
+                name = await div.$eval(nameCls, n => n.innerText)
 
-                conffirmed = await div.$eval('p.subBlock2___E7-fW', c => c.innerText)
+                conffirmed = await div.$eval(conffirmedCls, c => c.innerText)
                 if (conffirmed === '') { conffirmed = '0' }
 
-                cumulative = await div.$eval('p.subBlock5___2EkOU', y => y.innerText)
+                cumulative = await div.$eval(cumulativeCls, y => y.innerText)
                 if (cumulative === '') { cumulative = '0' }
 
-                deaths = await div.$eval('p.subBlock4___ANk6l', d => d.innerText)
+                deaths = await div.$eval(deathsCls, d => d.innerText)
                 if (deaths === '') { deaths = '0' }
 
-                cures = await div.$eval('p.subBlock3___3mcDz', r => r.innerText)
+                cures = await div.$eval(curesCls, r => r.innerText)
                 if (cures === '') { cures = '0' }
 
                 strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + ',' + dtms + '\n'
@@ -181,36 +186,36 @@ async function main() {
                 const ab2s = await div.$$('.areaBlock2___27vn7')
 
                 for (const ab1 of ab1s) {
-                    name = await ab1.$eval('p.subBlock1___j0DGa', n => n.innerText)
+                    name = await ab1.$eval(nameCls, n => n.innerText)
 
-                    conffirmed = await ab1.$eval('p.subBlock2___E7-fW', c => c.innerText)
+                    conffirmed = await ab1.$eval(conffirmedCls, c => c.innerText)
                     if (conffirmed === '') { conffirmed = '0' }
 
-                    cumulative = await ab1.$eval('p.subBlock5___2EkOU', y => y.innerText)
+                    cumulative = await ab1.$eval(cumulativeCls, y => y.innerText)
                     if (cumulative === '') { cumulative = '0' }
 
-                    deaths = await ab1.$eval('p.subBlock4___ANk6l', d => d.innerText)
+                    deaths = await ab1.$eval(deathsCls, d => d.innerText)
                     if (deaths === '') { deaths = '0' }
 
-                    cures = await ab1.$eval('p.subBlock3___3mcDz', r => r.innerText)
+                    cures = await ab1.$eval(curesCls, r => r.innerText)
                     if (cures === '') { cures = '0' }
 
                     strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + ',' + dtms + '\n'
                 }
 
                 for (const ab2 of ab2s) {
-                    name = await ab2.$eval('p.subBlock1___j0DGa', n => n.innerText)
+                    name = await ab2.$eval(nameCls, n => n.innerText)
 
-                    conffirmed = await ab2.$eval('p.subBlock2___E7-fW', c => c.innerText)
+                    conffirmed = await ab2.$eval(conffirmedCls, c => c.innerText)
                     if (conffirmed === '') { conffirmed = '0' }
                     
-                    cumulative = await ab2.$eval('p.subBlock5___2EkOU', y => y.innerText)
+                    cumulative = await ab2.$eval(cumulativeCls, y => y.innerText)
                     if (cumulative === '') { cumulative = '0' }
 
-                    deaths = await ab2.$eval('p.subBlock4___ANk6l', d => d.innerText)
+                    deaths = await ab2.$eval(deathsCls, d => d.innerText)
                     if (deaths === '') { deaths = '0' }
 
-                    cures = await ab2.$eval('p.subBlock3___3mcDz', r => r.innerText)
+                    cures = await ab2.$eval(curesCls, r => r.innerText)
                     if (cures === '') { cures = '0' }
 
                     strResult = strResult + name + ',' + dt + ',' + conffirmed + ',' + cumulative + ',' + deaths + ',' + cures + ',' + dtms + '\n'
@@ -222,7 +227,7 @@ async function main() {
     nb++
     }
     await writeStream.write(strResult)
-    // console.log(strResult)
+    //console.log(strResult)
   } catch (e) {
     console.log('our error', e)
   }
