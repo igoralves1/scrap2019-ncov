@@ -20,3 +20,7 @@ The code is very simple and need more improvements.
 I didn't create the code to retrieve all countries because Europe, Americas are async.
 Must spend some time on that.
 
+https://coronavirus.etica.ai/
+
+https://www.alertacorona.com.br/
+
