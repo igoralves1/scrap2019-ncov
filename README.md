@@ -24,3 +24,6 @@ https://coronavirus.etica.ai/
 
 https://www.alertacorona.com.br/
 
+https://www.youtube.com/watch?v=mCa0JXEwDEk&t=300s
+
+https://www.youtube.com/watch?v=Kas0tIxDvrg
