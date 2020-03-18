@@ -1,6 +1,6 @@
 scrapVirusC2109
 
-### Scraping site
+### Scraping this site
 - https://ncov.dxy.cn/ncovh5/view/pneumonia
 
 ### Scraping With Node.js & Cheerio (not working)
@@ -41,3 +41,5 @@ https://coronastats.co/
 https://www.worldometers.info/coronavirus/country/us/
 
 https://topic.newsbreak.com/covid-19.html?s=i0&fbclid=IwAR1IIeUlJKG5ABe4l65bQtpw2yeRAvn1OdJM2tgmAPTY3yytW7HG9uZN2HQ
+
+https://apify.com/pocesar/covid-brazil?fbclid=IwAR20K3Faj4GJoD2Jz10BeGbDbx-_G5B_icgto-hXg_-bviX0hl1SyCodsuE
