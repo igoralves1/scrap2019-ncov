@@ -29,3 +29,13 @@ https://www.youtube.com/watch?v=mCa0JXEwDEk&t=300s
 https://www.youtube.com/watch?v=Kas0tIxDvrg
 
 https://medium.com/@tomaspueyo/coronavirus-act-today-or-people-will-die-f4d3d9cd99ca
+
+https://cloud.google.com/maps-platform/maps/
+
+https://www.cosemsba.org.br/2020/03/17/cosems-ba-elabora-proposta-de-plano-municipal-de-contingencia-do-coronavirus/?fbclid=IwAR2YKK5qLE-dbrhBroylPkQRf94_isbCzBFt574PSb77eb8cXNUFgdeLW7c
+
+https://www.bing.com/covid
+
+https://coronastats.co/
+
+
