@@ -38,4 +38,4 @@ https://www.bing.com/covid
 
 https://coronastats.co/
 
-
+https://www.worldometers.info/coronavirus/country/us/
