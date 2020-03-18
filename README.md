@@ -39,3 +39,5 @@ https://www.bing.com/covid
 https://coronastats.co/
 
 https://www.worldometers.info/coronavirus/country/us/
+
+https://topic.newsbreak.com/covid-19.html?s=i0&fbclid=IwAR1IIeUlJKG5ABe4l65bQtpw2yeRAvn1OdJM2tgmAPTY3yytW7HG9uZN2HQ
