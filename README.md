@@ -48,4 +48,4 @@ http://plataforma.saude.gov.br/novocoronavirus/
 
 https://medium.com/nightingale/ten-considerations-before-you-create-another-chart-about-covid-19-27d3bd691be8
 
-https://medium.com/nightingale/ten-considerations-before-you-create-another-chart-about-covid-19-27d3bd691be8
+https://dash.datascienceplus.com/covid19/?fbclid=IwAR3c_XIZozr3lIFhxBPyDkzA4IabHAujqnLPKY3jBpK4WDcIjHTFUKvf0Rg
