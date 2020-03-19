@@ -45,3 +45,5 @@ https://topic.newsbreak.com/covid-19.html?s=i0&fbclid=IwAR1IIeUlJKG5ABe4l65bQtpw
 https://apify.com/pocesar/covid-brazil?fbclid=IwAR20K3Faj4GJoD2Jz10BeGbDbx-_G5B_icgto-hXg_-bviX0hl1SyCodsuE
 
 http://plataforma.saude.gov.br/novocoronavirus/
+
+https://medium.com/nightingale/ten-considerations-before-you-create-another-chart-about-covid-19-27d3bd691be8
