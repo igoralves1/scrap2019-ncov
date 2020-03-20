@@ -51,3 +51,5 @@ https://medium.com/nightingale/ten-considerations-before-you-create-another-char
 https://dash.datascienceplus.com/covid19/?fbclid=IwAR3c_XIZozr3lIFhxBPyDkzA4IabHAujqnLPKY3jBpK4WDcIjHTFUKvf0Rg
 
 https://nextstrain.org/ncov?fbclid=IwAR3jppmJIpynyxHlNI9xbIiktnMo35tCtdOnKjkBVQo6YQFzALojFA5NskM&l=clock
+
+https://messaging-custom-newsletters.nytimes.com/template/oakv2?uri=nyt%3A%2F%2Fnewsletter%2F45afc824-e306-4220-abab-728339c59c8e&productCode=CB&te=1&nl=coronavirus-briefing&emc=edit_cb_20200319&campaign_id=154&instance_id=16915&segment_id=22402&user_id=0910c9b16c59cf76a034662f1f4bb7b6&regi_id=116404741&fbclid=IwAR3NRRsgavTg9bDM6ySXUHFllorbvDdSx13wLO0cc6-_rUvrD0C36cqJHuM
