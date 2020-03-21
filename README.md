@@ -57,3 +57,5 @@ https://messaging-custom-newsletters.nytimes.com/template/oakv2?uri=nyt%3A%2F%2F
 https://www.nexojornal.com.br/grafico/2020/03/18/A-evolu%C3%A7%C3%A3o-no-n%C3%BAmero-de-casos-de-covid-19-em-diferentes-pa%C3%ADses?fbclid=IwAR1WMCOzeNHxDiNa7EJE8KZIo4R_ZxZN3maqFwqx07J6KGwmHy7utjd2P1w
 
 https://coronavirus.etica.ai/?fbclid=IwAR3psslZqkaamXD9gJUEV6mGdyHDNQF7NKMx5YR16ha2f49PS6ce3xQ-Jkk
+
+https://medium.com/@caiquecoelho/prevendo-o-crescimento-de-casos-de-covid-19-coronavirus-no-brasil-com-an%C3%A1lise-de-dados-gr%C3%A1ficos-33ee525b62f8
