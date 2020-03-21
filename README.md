@@ -55,3 +55,5 @@ https://nextstrain.org/ncov?fbclid=IwAR3jppmJIpynyxHlNI9xbIiktnMo35tCtdOnKjkBVQo
 https://messaging-custom-newsletters.nytimes.com/template/oakv2?uri=nyt%3A%2F%2Fnewsletter%2F45afc824-e306-4220-abab-728339c59c8e&productCode=CB&te=1&nl=coronavirus-briefing&emc=edit_cb_20200319&campaign_id=154&instance_id=16915&segment_id=22402&user_id=0910c9b16c59cf76a034662f1f4bb7b6&regi_id=116404741&fbclid=IwAR3NRRsgavTg9bDM6ySXUHFllorbvDdSx13wLO0cc6-_rUvrD0C36cqJHuM
 
 https://www.nexojornal.com.br/grafico/2020/03/18/A-evolu%C3%A7%C3%A3o-no-n%C3%BAmero-de-casos-de-covid-19-em-diferentes-pa%C3%ADses?fbclid=IwAR1WMCOzeNHxDiNa7EJE8KZIo4R_ZxZN3maqFwqx07J6KGwmHy7utjd2P1w
+
+https://coronavirus.etica.ai/?fbclid=IwAR3psslZqkaamXD9gJUEV6mGdyHDNQF7NKMx5YR16ha2f49PS6ce3xQ-Jkk
