@@ -59,3 +59,6 @@ https://www.nexojornal.com.br/grafico/2020/03/18/A-evolu%C3%A7%C3%A3o-no-n%C3%BA
 https://coronavirus.etica.ai/?fbclid=IwAR3psslZqkaamXD9gJUEV6mGdyHDNQF7NKMx5YR16ha2f49PS6ce3xQ-Jkk
 
 https://medium.com/@caiquecoelho/prevendo-o-crescimento-de-casos-de-covid-19-coronavirus-no-brasil-com-an%C3%A1lise-de-dados-gr%C3%A1ficos-33ee525b62f8
+
+
+https://observablehq.com/@yy/covid-19-fatality-rate?collection=%40yy%2Fcovid-19&fbclid=IwAR1V5bjwBVObikVMdPP-zrUgQsx8QCIQer8dhON3_23A6VrvqV9GZp8833c
