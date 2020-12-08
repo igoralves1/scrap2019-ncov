@@ -1,19 +1,24 @@
-scrapVirusC2109
+# Scrapy Chinese Covid19 Jan 2020
 
-### Scraping this site
+### Chinese site
 - https://ncov.dxy.cn/ncovh5/view/pneumonia
+
+### Scientific Articles
+- [A SARS-like cluster of circulating bat coronaviruses shows potential for human emergence - 2015](https://www.nature.com/articles/nm.3985)
 
 ### Scraping With Node.js & Cheerio (not working)
 - https://www.youtube.com/watch?v=LoziivfAAjE
 
-### Puppeteer (working) - async website
-- https://www.youtube.com/watch?v=IvaJ5n5xFqU&t=8s
+### [Puppeteer](https://developers.google.com/web/tools/puppeteer) - async website
+Puppeteer is a Node library which provides a high-level API to control headless Chrome or Chromium over the DevTools Protocol. It can also be configured to use full (non-headless) Chrome or Chromium. 
+
+- [Web Scraping with Puppeteer, NodeJS & Shopify](https://www.youtube.com/watch?v=IvaJ5n5xFqU&t=8s)
 
 
 `npm install`
 `pm2 start puppeteer.js`
 
-This project is running in an Ec2 instance 24/7.
+>>>This project is running in an Ec2 instance 24/7.
 I will push the files here during the nigth.
 Only files inside data folder are trusted.
 The code is very simple and need more improvements.
