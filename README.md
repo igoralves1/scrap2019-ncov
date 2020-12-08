@@ -68,4 +68,3 @@ https://medium.com/@caiquecoelho/prevendo-o-crescimento-de-casos-de-covid-19-cor
 
 https://observablehq.com/@yy/covid-19-fatality-rate?collection=%40yy%2Fcovid-19&fbclid=IwAR1V5bjwBVObikVMdPP-zrUgQsx8QCIQer8dhON3_23A6VrvqV9GZp8833c
 
-https://www.nature.com/articles/nm.3985
