@@ -18,7 +18,7 @@ Puppeteer is a Node library which provides a high-level API to control headless 
 `npm install`
 `pm2 start puppeteer.js`
 
->>>This project is running in an Ec2 instance 24/7.
+>This project is running in an Ec2 instance 24/7.
 I will push the files here during the nigth.
 Only files inside data folder are trusted.
 The code is very simple and need more improvements.
