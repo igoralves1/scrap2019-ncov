@@ -1,4 +1,4 @@
-# Scrapy Chinese Covid19 Jan 2020
+# Web Scraping Chinese Covid19 Jan 2020
 
 ### Chinese site
 - https://ncov.dxy.cn/ncovh5/view/pneumonia
