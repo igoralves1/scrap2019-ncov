@@ -7,7 +7,7 @@
 - [A SARS-like cluster of circulating bat coronaviruses shows potential for human emergence - 2015](https://www.nature.com/articles/nm.3985)
 
 ### Scraping With Node.js & Cheerio (not working)
-- https://www.youtube.com/watch?v=LoziivfAAjE
+- [Intro To Web Scraping With Node.js & Cheerio](https://www.youtube.com/watch?v=LoziivfAAjE)
 
 ### [Puppeteer](https://developers.google.com/web/tools/puppeteer) - async website
 Puppeteer is a Node library which provides a high-level API to control headless Chrome or Chromium over the DevTools Protocol. It can also be configured to use full (non-headless) Chrome or Chromium. 
@@ -24,6 +24,9 @@ Only files inside data folder are trusted.
 The code is very simple and need more improvements.
 I didn't create the code to retrieve all countries because Europe, Americas are async.
 Must spend some time on that.
+
+
+# Other links
 
 https://coronavirus.etica.ai/
 
